@@ -1,5 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.example</groupId>
   <artifactId>ui-tests</artifactId>
@@ -41,32 +42,35 @@
   </properties>
 
   <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.1</version>
-        <configuration>
-          <systemPropertyVariables>
-            <junit.jupiter.extensions.autodetection.enabled>true</junit.jupiter.extensions.autodetection.enabled>
-            <selenide.browser>chrome</selenide.browser>
-            <selenide.timeout>4000</selenide.timeout>
-            <!--<selenide.baseUrl>http://localhost:8080/gui</selenide.baseUrl>-->
-            <selenide.startMaximized>false</selenide.startMaximized>
-            <selenide.fastSetValue>true</selenide.fastSetValue>
-            <!--<selenide.browserSize>1920x1080</selenide.browserSize>-->
-          </systemPropertyVariables>
-          <trimStackTrace>false</trimStackTrace>
-        </configuration>  
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.1</version>
+          <configuration>
+            <systemPropertyVariables>
+              <junit.jupiter.extensions.autodetection.enabled>true
+              </junit.jupiter.extensions.autodetection.enabled>
+              <selenide.browser>chrome</selenide.browser>
+              <selenide.timeout>4000</selenide.timeout>
+              <!--<selenide.baseUrl>http://localhost:8080/gui</selenide.baseUrl>-->
+              <selenide.startMaximized>false</selenide.startMaximized>
+              <selenide.fastSetValue>true</selenide.fastSetValue>
+              <!--<selenide.browserSize>1920x1080</selenide.browserSize>-->
+            </systemPropertyVariables>
+            <trimStackTrace>false</trimStackTrace>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 </project>

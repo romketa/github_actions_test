@@ -57,6 +57,18 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
           <configuration>
+
+            <properties>
+              <property>
+                <name>listener</name>
+                <value>io.qameta.allure.testng.AllureTestNg</value>
+              </property>
+            </properties>
+
+            <argLine>
+              -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-1.9.6.jar"
+            </argLine>
+
             <systemPropertyVariables>
               <junit.jupiter.extensions.autodetection.enabled>true
               </junit.jupiter.extensions.autodetection.enabled>

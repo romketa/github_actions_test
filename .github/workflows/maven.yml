@@ -20,6 +20,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: mem
+      run: free -th
     - name: Command 1 in linux
       run: lscpu
     - name: Command 2 in linux
